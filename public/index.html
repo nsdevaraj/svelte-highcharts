@@ -12,24 +12,12 @@
   <meta name="viewport" content="width=device-width" />
   <title>highchart-custom-element</title>
   <link rel="stylesheet" href="global.css" />
-</head>
-<script>
-  const pkg = {
-    name: 'svelte',
-    version: 3,
-    speed: 'blazing',
-    type: "spline",
-    website: 'https://svelte.dev'
-  }; 
-</script>
-
-<body>
-  <div id="container1" style="width:50%; height:100%"></div>
-  <div id="container2" style="width:50%; height:100%"></div>
-  <highchart-box id="high" containerid="container1" highchartstype="spline">I am a default chart-box. </highchart-box>
-  <highchart-box id="high" containerid="container2" highchartstype="bar">I am a default chart-box. </highchart-box>
+</head> 
+<body> 
+  <highchart-box id="custom" highchartstype="spline">I am a default chart-box. </highchart-box> 
+  <highchart-box id="custom" highchartstype="bar">I am a default chart-box. </highchart-box> 
 </body>
-
+ 
 <style>
 
 </style>
