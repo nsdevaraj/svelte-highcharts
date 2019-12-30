@@ -1,46 +1,14 @@
 <script>
-  import { afterUpdate } from "svelte"; 
+  import { afterUpdate } from "svelte";
   import Highcharts from "highcharts";
   import data from "highcharts/modules/data";
   let canvas;
   export let highchartstype;
-  export let datasource
+  export let chartjson;
   data(Highcharts);
   afterUpdate(() => {
     setTimeout(() => {
-      Highcharts.chart(canvas, {
-        title: {
-          text: "Global temperature change"
-        },
-
-        subtitle: {
-          text: "Data input from CSV"
-        },
-
-      /*  data: {
-          csvURL: "https://demo-live-data.highcharts.com/vs-load.csv",
-          enablePolling: true,
-          dataRefreshRate: 100
-        },
-    */
-        plotOptions: {
-          series: {
-            marker: {
-              enabled: false
-            }
-          }
-        },
-
-        series: [
-          {
-            type: highchartstype,
-            color: "#c4392d",
-            negativeColor: "#5679c4",
-            fillOpacity: 0.5,
-            data:datasource
-          }
-        ]
-      });
+      Highcharts.chart(canvas, chartjson);
     }, 0);
   });
 </script>
@@ -50,16 +18,16 @@
   Setting custom css variables enables the user to use css to target a custom
   element by an attribute and change css properties that you want to expose.
   */
-  div { 
+  div {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
     height: 100%;
     width: 100%;
-  } 
-</style> 
-<div role="chart" 
-	bind:this={canvas} >
+  }
+</style>
+
+<div role="chart" bind:this={canvas}>
   <slot />
 </div>
 <svelte:options tag="highchart-box" />

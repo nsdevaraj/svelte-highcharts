@@ -14,21 +14,74 @@
   <link rel="stylesheet" href="global.css" />
   <script>
     window.onload = function () {
-         var chart = document.getElementById('chart1');
-         var data = [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4];
-         chart.datasource = data;
+      var chart = document.getElementById('chart1');
+      var chartconfig = {
+        title: {
+          text: "Global temperature change"
+        },
 
-         var chart2 = document.getElementById('chart2');
-         var data = [89.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4];
-         chart2.datasource = data;
+        subtitle: {
+          text: "Data input from CSV"
+        },
+
+        plotOptions: {
+          series: {
+            marker: {
+              enabled: false
+            }
+          }
+        },
+
+        series: [
+          {
+            type: 'bar',
+            color: "#c4392d",
+            negativeColor: "#5679c4",
+            fillOpacity: 0.5,
+            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+          }
+        ]
+      }
+      chart.chartjson = chartconfig;
+
+      var chart2 = document.getElementById('chart2');
+      var chart2config = {
+        title: {
+          text: "Global temperature change"
+        },
+
+        subtitle: {
+          text: "Data input from CSV"
+        },
+
+        plotOptions: {
+          series: {
+            marker: {
+              enabled: false
+            }
+          }
+        },
+
+        series: [
+          {
+            type: 'spline',
+            color: "#c4392d",
+            negativeColor: "#5679c4",
+            fillOpacity: 0.5,
+            data: [39.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+          }
+        ]
+      }
+      chart2.chartjson = chart2config;
     }
   </script>
-</head> 
-<body> 
-  <highchart-box id="chart1" highchartstype="spline">I am a default chart-box. </highchart-box> 
-  <highchart-box id="chart2" highchartstype="bar">I am a default chart-box. </highchart-box> 
+</head>
+
+<body>
+  <highchart-box id="chart1">I am a default chart-box. </highchart-box>
+  <highchart-box id="chart2">I am a default chart-box. </highchart-box>
 </body>
- 
+
 <style>
 
 </style>
