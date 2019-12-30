@@ -12,10 +12,21 @@
   <meta name="viewport" content="width=device-width" />
   <title>highchart-custom-element</title>
   <link rel="stylesheet" href="global.css" />
+  <script>
+    window.onload = function () {
+         var chart = document.getElementById('chart1');
+         var data = [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4];
+         chart.datasource = data;
+
+         var chart2 = document.getElementById('chart2');
+         var data = [89.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4];
+         chart2.datasource = data;
+    }
+  </script>
 </head> 
 <body> 
-  <highchart-box id="custom" highchartstype="spline">I am a default chart-box. </highchart-box> 
-  <highchart-box id="custom" highchartstype="bar">I am a default chart-box. </highchart-box> 
+  <highchart-box id="chart1" highchartstype="spline">I am a default chart-box. </highchart-box> 
+  <highchart-box id="chart2" highchartstype="bar">I am a default chart-box. </highchart-box> 
 </body>
  
 <style>

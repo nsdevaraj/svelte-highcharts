@@ -2,8 +2,9 @@
   import { afterUpdate } from "svelte"; 
   import Highcharts from "highcharts";
   import data from "highcharts/modules/data";
-  export let highchartstype;
   let canvas;
+  export let highchartstype;
+  export let datasource
   data(Highcharts);
   afterUpdate(() => {
     setTimeout(() => {
@@ -16,12 +17,12 @@
           text: "Data input from CSV"
         },
 
-        data: {
+      /*  data: {
           csvURL: "https://demo-live-data.highcharts.com/vs-load.csv",
           enablePolling: true,
           dataRefreshRate: 100
         },
-
+    */
         plotOptions: {
           series: {
             marker: {
@@ -35,7 +36,8 @@
             type: highchartstype,
             color: "#c4392d",
             negativeColor: "#5679c4",
-            fillOpacity: 0.5
+            fillOpacity: 0.5,
+            data:datasource
           }
         ]
       });
