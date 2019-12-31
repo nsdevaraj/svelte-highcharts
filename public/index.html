@@ -31,10 +31,11 @@
             }
           }
         },
-
+        chart: {
+          type: 'pyramid'
+        },
         series: [
           {
-            type: 'bar',
             color: "#c4392d",
             negativeColor: "#5679c4",
             fillOpacity: 0.5,
@@ -76,11 +77,14 @@
     }
   </script>
 </head>
- <style> 
+<style>
 </style>
-<body> 
-  <highchart-box id="chart1" highchartboxheight="50%" highchartboxwidth="100%">I am a default chart-box. </highchart-box>
-  <highchart-box id="chart2" highchartboxheight="50%" highchartboxwidth="100%">I am a default chart-box. </highchart-box> 
+
+<body>
+  <highchart-box id="chart1" highchartboxheight="50%" highchartboxwidth="100%">I am a default chart-box.
+  </highchart-box>
+  <highchart-box id="chart2" highchartboxheight="50%" highchartboxwidth="100%">I am a default chart-box.
+  </highchart-box>
 </body>
 
 <style>

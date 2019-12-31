@@ -1,6 +1,10 @@
 <script>
   import { afterUpdate } from "svelte";
   import Highcharts from "highcharts"; 
+  import highcharts3D from "highcharts-3d"; 
+  import funnel from "highcharts/modules/funnel";
+   
+  funnel(Highcharts);
   let canvas; 
   export let chartjson; 
   export let highchartboxwidth;
