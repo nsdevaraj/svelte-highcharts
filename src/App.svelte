@@ -5,10 +5,12 @@
   import funnel from "highcharts/modules/funnel";
   import data from "highcharts/modules/data";
   import exporting from "highcharts/modules/exporting";
+  import exportdata from "highcharts/modules/export-data";
 
   highchartsMore(Highcharts);
   data(Highcharts);
   exporting(Highcharts);
+  exportdata(Highcharts);
   funnel(Highcharts);
 
   let canvas;
@@ -21,7 +23,7 @@
   afterUpdate(() => {
     setTimeout(() => { 
         Highcharts.chart(canvas, chartjson); 
-    }, 10);
+    }, 50);
   });
 </script>
 
