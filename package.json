@@ -50,7 +50,7 @@
     ]
   },
   "dependencies": {
-    "highcharts": "^8.0.0",
+    "highcharts": "^8.1.1",
     "highcharts-more": "^0.1.7"
   }
 }
